@@ -22,6 +22,9 @@
       @each (movie in movies)
       <li>
         <a href="{{ route('movies.show', {slug: movie.slug})}}">
+
+          
+
           {{ movie.title }}
         </a>
       </li>

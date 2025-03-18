@@ -16,6 +16,9 @@
         <a href="{{ route('movies.show', { slug: 'My-Awsome-Movie' }) }}">My Awsome Movie</a>
         <a href="{{ route('movies.show', { slug: 'Another-Awsome-Movie' }) }}">Another Awsome Movie</a>
       </nav>
+
+      <h1>{{ md.frontmatter.title }}</h1>
+
       {{{ movie }}}
 
     </div>
