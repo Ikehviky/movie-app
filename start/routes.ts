@@ -7,6 +7,7 @@
 |
 */
 
+const RedisController = () => import('#controllers/redis_controller')
 import router from '@adonisjs/core/services/router'
 const MoviesController = () => import('#controllers/movies_controller')
 
@@ -16,3 +17,6 @@ router
   .get('/movie/:slug', [MoviesController, 'show'])
   .as('movies.show')
   .where('slug', router.matchers.slug())
+
+router.delete('/redis/flush', [RedisController, 'flush'])
+router.delete('/redis/:slug', [RedisController, 'destroy'])
