@@ -15,8 +15,11 @@
 </div>
 
 <div class="fixed botton-0 right-3 flex gap-3">
-  @button({href: '#', class:'rounded'})
-  Flush Redis Db
-  @end
+  <form action="{{ route('redis.flush', {}, {qs: { _method: 'DELETE' } }) }}" method="POST">
+    {{ csrfField() }}
+    @button({ type: "submit", class:'rounded'})
+    Flush Redis Db
+    @end
+  </form>
 </div>
 @end

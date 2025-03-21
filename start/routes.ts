@@ -18,5 +18,5 @@ router
   .as('movies.show')
   .where('slug', router.matchers.slug())
 
-router.get('/redis/flush', [RedisController, 'flush'])
-router.delete('/redis/:slug', [RedisController, 'destroy'])
+router.delete('/redis/flush', [RedisController, 'flush']).as('redis.flush')
+router.delete('/redis/:slug', [RedisController, 'destroy']).as('redis.destroy')
